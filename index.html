@@ -13,13 +13,19 @@
     <script>
         let tg = window.Telegram.WebApp;
         let question = document.getElementById('question');
-        let close = document.getElementById("close")
+        let close = document.getElementById("close");
+        var Sigizmund = false;
+        tg.expand();
 
         question.addEventListener("click", () => {
-            document.getElementById("user_name").textContent = tg.initDataUnsafe.user.first_name;
+            Sigizmund = true;
         });
 
         close.addEventListener("click", () => {
+            let data = {
+                is_sigizmund: Sigizmund
+            }
+            tg.sendData(JSON.stringify(data))
             tg.close();
         });
     </script>

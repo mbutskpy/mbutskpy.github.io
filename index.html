@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sigizmund</title>
+    <title>Sigizmund v0.1</title>
 </head>
 <body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -13,8 +13,9 @@
     <script>
         let tg = window.Telegram.WebApp;
         let question = document.getElementById('question');
+        let close = document.getElementById("close")
 
-        buy.addEventListener("click", () => {
+        question.addEventListener("click", () => {
             document.getElementById("user_name").value = initDataUnsafe.user.first_name;
         })
 
